@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_023
+  m_EditorClassIdentifier: 
+  id: short_023
+  video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
+  titulo: El turismo crece en la Comuna 13 y preocupa a sus habitantes
+  fuente: 
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: Turismo Comuna 13
+  searchOptions:
+  - texto: "\xBFQu\xE9 impacto ha tenido realmente el turismo en la Comuna 13?"
+    tipo: 2
+  - texto: "\xBFC\xF3mo ha crecido el turismo en la Comuna 13 de Medell\xEDn?"
+    tipo: 1
+  - texto: "\xBFPor qu\xE9 los turistas est\xE1n acabando con la cultura de la Comuna
+      13?"
+    tipo: 0

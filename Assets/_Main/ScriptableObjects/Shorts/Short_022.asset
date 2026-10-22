@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_022
+  m_EditorClassIdentifier: 
+  id: short_022
+  video: {fileID: 32900000, guid: a1c6a56987ee54f4b895856e010f3923, type: 3}
+  titulo: "Las plantas de Medell\xEDn sufren por el calor y la sequ\xEDa"
+  fuente: 
+  sensacionalismo: 1
+  falsedad: 2
+  tematica: Lluvia artificial
+  searchOptions:
+  - texto: "\xBFHay evidencia de una sequ\xEDa que est\xE9 afectando las plantas
+      cerca del Metro de Medell\xEDn?"
+    tipo: 2
+  - texto: "\xBFQu\xE9 efectos tiene el calor sobre la vegetaci\xF3n urbana?"
+    tipo: 1
+  - texto: "\xBFSe est\xE1n muriendo todas las plantas de Medell\xEDn por el calor?"
+    tipo: 0

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_019
+  m_EditorClassIdentifier: 
+  id: short_019
+  video: {fileID: 32900000, guid: 2cdedec818e1f0c4dbcfbc430ee49689, type: 3}
+  titulo: "Medell\xEDn instala rociadores para proteger la vegetaci\xF3n del Metro"
+  fuente: 
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: "Vegetaci\xF3n y sequ\xEDa bajo el Metro de Medell\xEDn"
+  searchOptions:
+  - texto: "\xBFEl Metro de Medell\xEDn instal\xF3 realmente sistemas de riego para
+      las plantas?"
+    tipo: 2
+  - texto: "\xBFC\xF3mo se pueden proteger las plantas durante una sequ\xEDa urbana?"
+    tipo: 1
+  - texto: "\xBFCu\xE1nto dinero est\xE1 gastando Medell\xEDn en regar las plantas
+      del Metro?"
+    tipo: 0

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_029
+  m_EditorClassIdentifier: 
+  id: short_029
+  video: {fileID: 32900000, guid: 79a7f62ac91059c49baa59d35e262041, type: 3}
+  titulo: "Los veh\xEDculos el\xE9ctricos llegan con fuerza al Valle de Aburr\xE1"
+  fuente: 
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: "Veh\xEDculos el\xE9ctricos"
+  searchOptions:
+  - texto: "\xBFQu\xE9 dicen las cifras sobre el crecimiento de los veh\xEDculos
+      el\xE9ctricos en el Valle de Aburr\xE1?"
+    tipo: 2
+  - texto: "\xBFC\xF3mo funcionan los veh\xEDculos el\xE9ctricos y c\xF3mo se cargan?"
+    tipo: 1
+  - texto: "\xBFPor qu\xE9 todos los conductores de Medell\xEDn est\xE1n cambi\xE1ndose
+      a veh\xEDculos el\xE9ctricos?"
+    tipo: 0

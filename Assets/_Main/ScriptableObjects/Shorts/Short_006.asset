@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_006
+  m_EditorClassIdentifier: 
+  id: short_006
+  video: {fileID: 32900000, guid: 93e2a3f172702cf458c6b78a6d5f468d, type: 3}
+  titulo: "\xA1No hay trabajo! Medell\xEDn pierde empleos y miles quedan en la calle"
+  fuente: 
+  sensacionalismo: 3
+  falsedad: 3
+  tematica: "Desempleo en Medell\xEDn"
+  searchOptions:
+  - texto: "\xBFLas cifras oficiales confirman una p\xE9rdida masiva de empleos en
+      Medell\xEDn?"
+    tipo: 2
+  - texto: "\xBFC\xF3mo ha variado el desempleo en Medell\xEDn recientemente?"
+    tipo: 1
+  - texto: "\xBFEs verdad que en Medell\xEDn ya no hay trabajo para nadie?"
+    tipo: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_033
+  m_EditorClassIdentifier: 
+  id: short_031
+  video: {fileID: 32900000, guid: 3fc3cb24466ca4b4589cc56c71d6e886, type: 3}
+  titulo: Muchas ofertas en linea terminan en secuestro
+  fuente: 
+  sensacionalismo: 2
+  falsedad: 1
+  tematica: Falsas ofertas de empleo y secuestro
+  searchOptions:
+  - texto: "\xBFC\xF3mo identificar una oferta de empleo falsa antes de aceptar una
+      entrevista?"
+    tipo: 2
+  - texto: "\xBFQu\xE9 se\xF1ales suelen tener las falsas ofertas de empleo en internet?"
+    tipo: 1
+  - texto: "\xBFQu\xE9 ofertas de empleo usan los delincuentes para secuestrar personas?"
+    tipo: 0

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_012
+  m_EditorClassIdentifier: 
+  id: short_012
+  video: {fileID: 32900000, guid: 708c81022a4c2cb4392e68afd78ca8f9, type: 3}
+  titulo: "\xA1Emergencia en cl\xEDnica! Gases t\xF3xicos obligan a evacuar a 80
+    personas"
+  fuente: 
+  sensacionalismo: 3
+  falsedad: 2
+  tematica: "Emergencia qu\xEDmica en cl\xEDnica"
+  searchOptions:
+  - texto: "\xBFLas autoridades confirmaron una fuga de gases t\xF3xicos en la cl\xEDnica?"
+    tipo: 2
+  - texto: "\xBFPor qu\xE9 se evac\xFAa una cl\xEDnica durante una emergencia qu\xEDmica?"
+    tipo: 1
+  - texto: "\xBFCu\xE1ntas personas podr\xEDan morir por los gases t\xF3xicos de
+      la cl\xEDnica?"
+    tipo: 0

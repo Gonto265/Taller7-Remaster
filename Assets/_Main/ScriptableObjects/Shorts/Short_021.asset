@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_021
+  m_EditorClassIdentifier: 
+  id: short_021
+  video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
+  titulo: "\xA1Comida peligrosa! Clientes podr\xEDan terminar gravemente enfermos"
+  fuente: 
+  sensacionalismo: 3
+  falsedad: 3
+  tematica: Restaurante
+  searchOptions:
+  - texto: 
+    tipo: 2
+  - texto: 
+    tipo: 1
+  - texto: 
+    tipo: 0

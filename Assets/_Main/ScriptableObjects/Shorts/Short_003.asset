@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_003
+  m_EditorClassIdentifier: 
+  id: short_003
+  video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
+  titulo: "\xA1Medell\xEDn se queda sin ni\xF1os! Los colegios est\xE1n desapareciendo"
+  fuente: 
+  sensacionalismo: 3
+  falsedad: 3
+  tematica: "Cierre de colegios en Medell\xEDn"
+  searchOptions:
+  - texto: "\xBFHay datos que confirmen que Medell\xEDn se est\xE1 quedando sin ni\xF1os?"
+    tipo: 2
+  - texto: "\xBFC\xF3mo ha evolucionado la poblaci\xF3n infantil de Medell\xEDn en
+      los \xFAltimos a\xF1os?"
+    tipo: 1
+  - texto: "\xBFCu\xE1ndo se quedar\xE1 Medell\xEDn completamente sin ni\xF1os?"
+    tipo: 0

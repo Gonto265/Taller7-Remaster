@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_011
+  m_EditorClassIdentifier: 
+  id: short_011
+  video: {fileID: 32900000, guid: baa97754d26fab44ba2300bf9aff272e, type: 3}
+  titulo: "Evac\xFAan un hospital de Medell\xEDn por una fuga de gas t\xF3xico"
+  fuente: 
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: "Emergencia qu\xEDmica en cl\xEDnica"
+  searchOptions:
+  - texto: "\xBFQu\xE9 gases t\xF3xicos pueden matar a personas dentro de una cl\xEDnica?"
+    tipo: 0
+  - texto: "\xBFQu\xE9 hacer ante una posible fuga de gas en un hospital?"
+    tipo: 1
+  - texto: "\xBFQu\xE9 sustancia provoc\xF3 la evacuaci\xF3n de la cl\xEDnica?"
+    tipo: 2

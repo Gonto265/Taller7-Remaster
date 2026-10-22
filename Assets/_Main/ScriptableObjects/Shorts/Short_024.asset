@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_024
+  m_EditorClassIdentifier: 
+  id: short_024
+  video: {fileID: 32900000, guid: 997ddf2386efcd2429c6dcd74be4cd00, type: 3}
+  titulo: "\xBFLa seguridad de la Comuna 13 est\xE1 en riesgo por el turismo?"
+  fuente: 
+  sensacionalismo: 2
+  falsedad: 1
+  tematica: Turismo Comuna 13
+  searchOptions:
+  - texto: "\xBFExisten datos que relacionen el aumento del turismo con problemas
+      de seguridad en la Comuna 13?"
+    tipo: 2
+  - texto: "\xBFQu\xE9 cambios ha producido el turismo en la seguridad de la Comuna
+      13?"
+    tipo: 1
+  - texto: "\xBFQu\xE9 delitos est\xE1n cometiendo los turistas en la Comuna 13?"
+    tipo: 0

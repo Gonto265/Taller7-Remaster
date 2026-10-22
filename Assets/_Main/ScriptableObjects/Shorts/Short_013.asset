@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_013
+  m_EditorClassIdentifier: 
+  id: short_013
+  video: {fileID: 32900000, guid: c2c6dea4230bb2943ac189e7c86dc842, type: 3}
+  titulo: "Incendio en Itag\xFC\xED deja seis heridos y dos capturados"
+  fuente: 
+  sensacionalismo: 2
+  falsedad: 1
+  tematica: "Incendio en Itag\xFC\xED"
+  searchOptions:
+  - texto: "\xBFCu\xE1ntas personas resultaron heridas realmente en el incendio de
+      Itag\xFC\xED?"
+    tipo: 2
+  - texto: "\xBFC\xF3mo se determina la causa de un incendio residencial?"
+    tipo: 1
+  - texto: "\xBFQui\xE9n provoc\xF3 el incendio de Itag\xFC\xED?"
+    tipo: 0

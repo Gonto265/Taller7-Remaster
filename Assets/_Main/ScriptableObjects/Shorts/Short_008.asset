@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_008
+  m_EditorClassIdentifier: 
+  id: short_008
+  video: {fileID: 32900000, guid: b610d9529636eea48a8bd2ff640875e1, type: 3}
+  titulo: "Globo de mecha provoca suspensi\xF3n de vuelos en Olaya Herrera"
+  fuente: 
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: Globo de mecha en el aeropuerto
+  searchOptions:
+  - texto: "\xBFHubo realmente una interrupci\xF3n de vuelos por un globo en el aeropuerto
+      Olaya Herrera?"
+    tipo: 2
+  - texto: "\xBFQu\xE9 riesgos representan los objetos extra\xF1os para un aeropuerto?"
+    tipo: 1
+  - texto: "\xBFQu\xE9 otros accidentes puede provocar un globo dentro de un aeropuerto?"
+    tipo: 0

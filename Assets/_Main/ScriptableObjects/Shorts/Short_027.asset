@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_027
+  m_EditorClassIdentifier: 
+  id: short_027
+  video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
+  titulo: "\xA1Las tiendas de barrio est\xE1n cerrando! La crisis golpea a Colombia"
+  fuente: 
+  sensacionalismo: 2
+  falsedad: 2
+  tematica: Tiendas de barrio
+  searchOptions:
+  - texto: "\xBFCu\xE1ntas tiendas de barrio han cerrado realmente en Colombia?"
+    tipo: 2
+  - texto: "\xBFQu\xE9 factores est\xE1n afectando a las tiendas de barrio?"
+    tipo: 1
+  - texto: "\xBFCu\xE1ntas tiendas van a desaparecer por culpa de las grandes cadenas?"
+    tipo: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_009
+  m_EditorClassIdentifier: 
+  id: short_009
+  video: {fileID: 32900000, guid: f40603900a3164c48b823933e75045e9, type: 3}
+  titulo: "\xA1Peligro en el aeropuerto! Un globo casi provoca una tragedia a\xE9rea"
+  fuente: 
+  sensacionalismo: 1
+  falsedad: 2
+  tematica: Globo de mecha en el aeropuerto
+  searchOptions:
+  - texto: "\xBFQu\xE9 dijeron las autoridades sobre el incidente del globo en el
+      aeropuerto?"
+    tipo: 2
+  - texto: "\xBFC\xF3mo reaccionan los aviones ante objetos en la pista?"
+    tipo: 1
+  - texto: "\xBFQu\xE9 tan cerca estuvo el avi\xF3n de estrellarse por el globo?"
+    tipo: 0

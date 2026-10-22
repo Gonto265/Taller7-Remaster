@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_004
+  m_EditorClassIdentifier: 
+  id: short_004
+  video: {fileID: 32900000, guid: dfbc35fb45003e4449220bb01dffc946, type: 3}
+  titulo: "El desempleo golpea a Medell\xEDn"
+  fuente: 
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: "Desempleo en Medell\xEDn"
+  searchOptions:
+  - texto: "\xBFCu\xE1l es la tasa oficial de desempleo actual en Medell\xEDn?"
+    tipo: 2
+  - texto: "\xBFC\xF3mo se mide el desempleo en Medell\xEDn?"
+    tipo: 1
+  - texto: "\xBFPor qu\xE9 cada vez hay menos trabajo en Medell\xEDn?"
+    tipo: 0

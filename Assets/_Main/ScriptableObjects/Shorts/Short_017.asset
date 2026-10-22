@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae84c5ea34f4040b5d550907ab5c56, type: 3}
+  m_Name: Short_017
+  m_EditorClassIdentifier: 
+  id: short_017
+  video: {fileID: 32900000, guid: fa8ffb38228bbf84c929e8187a0a233e, type: 3}
+  titulo: Aumentan los casos de dengue en Antioquia
+  fuente: 
+  sensacionalismo: 2
+  falsedad: 1
+  tematica: Brote de dengue en Antioquia
+  searchOptions:
+  - texto: "\xBFQu\xE9 dicen las autoridades de salud sobre los casos de dengue en
+      Antioquia?"
+    tipo: 2
+  - texto: "\xBFCu\xE1les son los s\xEDntomas m\xE1s comunes del dengue?"
+    tipo: 1
+  - texto: "\xBFCu\xE1ntas personas est\xE1n muriendo por el brote de dengue en Antioquia?"
+    tipo: 0
