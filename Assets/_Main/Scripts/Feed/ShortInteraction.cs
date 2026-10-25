@@ -49,10 +49,13 @@ public class ShortInteraction : MonoBehaviour
     public bool Liked => liked;
     public bool Reported => reported;
 
+    private NotificationManager notificationManager;
+
     private void Awake()
     {       
         idleManager = FindFirstObjectByType<IdleManager>();
         gameManager = FindFirstObjectByType<GameManager>();
+        notificationManager = FindFirstObjectByType<NotificationManager>();
     }
 
     public void Initialize(
@@ -174,16 +177,18 @@ public class ShortInteraction : MonoBehaviour
             cambioF
         );
 
-        // Si la suma de los cambios es menor o igual a 0, fue una buena decisión.
+        doomingManager.ultimoAumentoFuePorScroll = false;
+        
         bool fueBuenaDecision = (cambioReal.x + cambioReal.y) <= 0;
         MostrarFlash(fueBuenaDecision);
+        
+        if (notificationManager != null) 
+            notificationManager.MostrarNotificacion(fueBuenaDecision);
 
         likeCambioSAplicado = cambioReal.x;
         likeCambioFAplicado = cambioReal.y;
 
-        Debug.Log(
-            $"Like aplicado → S: {cambioReal.x}, F: {cambioReal.y}"
-        );
+        Debug.Log($"Like aplicado → S: {cambioReal.x}, F: {cambioReal.y}");
     }
 
     // =========================================================
@@ -252,21 +257,16 @@ public class ShortInteraction : MonoBehaviour
         int cambioS = ObtenerCambioReport(reporteCorrecto);
         doomingManager.ModificarSensacionalismo(cambioS);
 
-        // --- NUEVA LÓGICA DE FEEDBACK VISUAL ---
-        if (cambioS > 0)
-        {
-            MostrarFlash(false); // Aumenta el Dooming = Mala decisión (Rojo/Negativo)
-        }
-        else if (cambioS < 0)
-        {
-            MostrarFlash(true);  // Reduce el Dooming = Buena decisión (Verde/Positivo)
-        }
-        // Si cambioS es exactamente 0 (caso 2), simplemente no llamamos a MostrarFlash()
-        // ---------------------------------------
+        doomingManager.ultimoAumentoFuePorScroll = false;
+        
+        if (cambioS > 0) MostrarFlash(false);
+        else if (cambioS < 0) MostrarFlash(true);
     
-        Debug.Log(
-            $"Report confirmado → S: {cambioS}"
-        );
+        // Si cambioS es 0 (neutral), no mandamos notificación para no confundir.
+        if (cambioS != 0 && notificationManager != null) 
+            notificationManager.MostrarNotificacion(cambioS < 0);
+
+        Debug.Log($"Report confirmado → S: {cambioS}");
     }
 
     public void ConfirmarReportCorrecto()
@@ -326,18 +326,15 @@ public class ShortInteraction : MonoBehaviour
 
         doomingManager.ModificarFalsedad(cambioF);
 
-        if (opcion.tipo == SearchOption.SearchType.Positiva)
-        {
-            MostrarFlash(true);
-        }
-        else if (opcion.tipo == SearchOption.SearchType.Negativa)
-        {
-            MostrarFlash(false);
-        }
+        doomingManager.ultimoAumentoFuePorScroll = false;
+        
+        if (opcion.tipo == SearchOption.SearchType.Positiva) MostrarFlash(true);
+        else if (opcion.tipo == SearchOption.SearchType.Negativa) MostrarFlash(false);
+        
+        if (opcion.tipo != SearchOption.SearchType.Neutral && notificationManager != null)
+            notificationManager.MostrarNotificacion(opcion.tipo == SearchOption.SearchType.Positiva);
 
-        Debug.Log(
-            $"Búsqueda → {opcion.tipo}, F: {cambioF}"
-        );
+        Debug.Log($"Búsqueda → {opcion.tipo}, F: {cambioF}");
     }
 
     private bool BusquedaYaUtilizada(SearchOption.SearchType tipo)
@@ -433,7 +430,9 @@ public class ShortInteraction : MonoBehaviour
     
         if (tiempoTranscurrido < TIEMPO_SCROLL_IMPULSIVO)
         {
+            doomingManager.ultimoAumentoFuePorScroll = true; // Avisa que fue por scroll
             doomingManager.ModificarDooming(4f, 4f);
+            if (notificationManager != null) notificationManager.MostrarNotificacion(false, true); // (no fue buena decisión, fue scroll)
     
             Debug.Log(
                 $"Scroll impulsivo → +4 S, +4 F " +
@@ -442,11 +441,14 @@ public class ShortInteraction : MonoBehaviour
         }
         else
         {
+            doomingManager.ultimoAumentoFuePorScroll = false;
             Debug.Log(
                 $"Scroll normal → sin penalización " +
                 $"(tiempo: {tiempoTranscurrido:F2}s)"
             );
         }
+
+        
     }
 
     private void MostrarFlash(bool decisionPositiva)

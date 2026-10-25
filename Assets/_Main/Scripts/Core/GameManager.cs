@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ShortView shortView;
 
     [Header("Duración de la partida")]
-    [SerializeField] private float duracionPartida = 180f;
+    [SerializeField] private float duracionPartida = 120f;
     
     private float tiempoTranscurrido;
 
@@ -119,25 +119,15 @@ public class GameManager : MonoBehaviour
         );
     }
 
-    public void FinalizarPorCritico()
+    public void FinalizarPorCritico(bool porScroll = false)
     {
         CurrentResult = ResultType.Critico;
-    
         SetState(GameState.Doom);
 
-        if (shortView != null)
-        {
-            shortView.DetenerVideo();
-        }
-
-        if (resultUI != null)
-        {
-            resultUI.MostrarDoom();
-        }
+        if (shortView != null) shortView.DetenerVideo();
+        if (resultUI != null) resultUI.MostrarDoom(porScroll);
     
-        Debug.Log(
-            $"Partida terminada por estado crítico → Resultado: {CurrentResult}"
-        );
+        Debug.Log($"Partida terminada por estado crítico. Por scroll impulsivo: {porScroll}");
     }
 
     public void FinalizarPorNoScrollear()

@@ -14,6 +14,8 @@ public class DoomingManager : MonoBehaviour
     public float Sensacionalismo => sensacionalismo;
     public float Falsedad => falsedad;
 
+    public bool ultimoAumentoFuePorScroll = false; // NUEVO
+
     private void Awake()
     {
         gameManager = FindFirstObjectByType<GameManager>();
@@ -21,18 +23,15 @@ public class DoomingManager : MonoBehaviour
 
     private void Update()
     {
-        if (gameManager == null)
-            return;
-
-        if (gameManager.CurrentState != GameManager.GameState.Playing)
-            return;
+        if (gameManager == null || gameManager.CurrentState != GameManager.GameState.Playing) return;
 
         sensacionalismo += aumentoPorSegundo * Time.deltaTime;
         falsedad += aumentoPorSegundo * Time.deltaTime;
 
         if (HayDoomingCritico())
         {
-            gameManager.FinalizarPorCritico();
+            // Envía el motivo exacto al GameManager
+            gameManager.FinalizarPorCritico(ultimoAumentoFuePorScroll); 
         }
     }
 

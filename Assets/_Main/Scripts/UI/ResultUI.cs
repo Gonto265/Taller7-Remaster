@@ -11,6 +11,10 @@ public class ResultUI : MonoBehaviour
     [SerializeField] private TMP_Text resultTitle;
     [SerializeField] private TMP_Text resultDescription;
 
+    [Header("Doom Panel Textos")]
+    [SerializeField] private TMP_Text doomTitleText;
+    [SerializeField] private TMP_Text doomDescriptionText;
+
     private void Start()
     {
         OcultarTodo();
@@ -53,13 +57,20 @@ public class ResultUI : MonoBehaviour
         }
     }
 
-    public void MostrarDoom()
+    public void MostrarDoom(bool porScroll = false)
     {
         OcultarTodo();
+        if (doomPanel != null) doomPanel.SetActive(true);
 
-        if (doomPanel != null)
+        if (porScroll)
         {
-            doomPanel.SetActive(true);
+            if (doomTitleText != null) doomTitleText.text = "ATENCIÓN CONSUMIDA";
+            if (doomDescriptionText != null) doomDescriptionText.text = "Deslizas sin prestar atención. Tu concentración ha decaído y el contenido tóxico consumió tu feed por completo.";
+        }
+        else
+        {
+            if (doomTitleText != null) doomTitleText.text = "ESTADO CRÍTICO";
+            if (doomDescriptionText != null) doomDescriptionText.text = "El feed ha colapsado por exceso de sensacionalismo y falsedad.";
         }
     }
 
