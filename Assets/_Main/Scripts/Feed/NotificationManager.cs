@@ -7,10 +7,16 @@ public class NotificationManager : MonoBehaviour
 {
     [Header("UI de Notificación")]
     [SerializeField] private GameObject notificationPanel;
+    [SerializeField] private RectTransform notificationRect; // NUEVO: Para mover el panel
     [SerializeField] private Image characterIcon;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text messageText;
-    [SerializeField] private Image timeBar; // Imagen con Image Type: Filled
+    [SerializeField] private Image timeBar;
+
+    [Header("Animación")]
+    [SerializeField] private float velocidadAnimacion = 15f;
+    [SerializeField] private float posicionXFuera = -1500f; // Dónde empieza (fuera a la izquierda)
+    private float posicionXOriginal; // Dónde debe terminar (centro)
 
     [Header("Personajes")]
     [SerializeField] private Sprite tutoSprite;
@@ -19,7 +25,7 @@ public class NotificationManager : MonoBehaviour
     [Header("Configuración")]
     [SerializeField] private float duracion = 4f;
     [Range(0f, 1f)]
-    [SerializeField] private float probabilidadAparicion = 0.35f; // 35% de que aparezca tras una acción
+    [SerializeField] private float probabilidadAparicion = 0.35f; 
 
     // Banco de frases
     private readonly string[] tutoGood = { "¡Bien hecho! Cuestionar la información es clave.", "¡Así se hace! No caíste en la trampa.", "¡Excelente! Investigar siempre ayuda." };
@@ -34,6 +40,9 @@ public class NotificationManager : MonoBehaviour
     private void Awake()
     {
         if (notificationPanel != null) notificationPanel.SetActive(false);
+        
+        // Guardamos la posición central que le pusiste en el Canvas
+        if (notificationRect != null) posicionXOriginal = notificationRect.anchoredPosition.x;
     }
 
     public void MostrarNotificacion(bool fueBuenaDecision, bool fueScrollImpulsivo = false)
@@ -44,7 +53,7 @@ public class NotificationManager : MonoBehaviour
 
         characterIcon.sprite = hablaTuto ? tutoSprite : doomSprite;
         nameText.text = hablaTuto ? "Tuto" : "Doom";
-        nameText.color = hablaTuto ? new Color(0.2f, 0.8f, 0.2f) : new Color(0.8f, 0.2f, 0.2f); // Verde para Tuto, Rojo para Doom
+        nameText.color = hablaTuto ? new Color(0.2f, 0.8f, 0.2f) : new Color(0.8f, 0.2f, 0.2f); 
 
         if (fueScrollImpulsivo)
         {
@@ -67,18 +76,41 @@ public class NotificationManager : MonoBehaviour
 
     private IEnumerator RutinaNotificacion()
     {
-        notificationPanel.SetActive(true);
-        Time.timeScale = 0f; // Pausa contadores, dooming automático y videos
+        // 1. Pausamos el juego de inmediato
+        Time.timeScale = 0f; 
 
+        // 2. Teletransportamos el panel fuera de la pantalla (a la izquierda)
+        if (notificationRect != null)
+        {
+            notificationRect.anchoredPosition = new Vector2(posicionXFuera, notificationRect.anchoredPosition.y);
+        }
+        
+        notificationPanel.SetActive(true);
+
+        // 3. Animamos la entrada usando unscaledDeltaTime (porque el juego está pausado)
+        if (notificationRect != null)
+        {
+            while (Mathf.Abs(notificationRect.anchoredPosition.x - posicionXOriginal) > 1f)
+            {
+                float nuevaX = Mathf.Lerp(notificationRect.anchoredPosition.x, posicionXOriginal, Time.unscaledDeltaTime * velocidadAnimacion);
+                notificationRect.anchoredPosition = new Vector2(nuevaX, notificationRect.anchoredPosition.y);
+                yield return null;
+            }
+            // Aseguramos que quede exactamente en su lugar
+            notificationRect.anchoredPosition = new Vector2(posicionXOriginal, notificationRect.anchoredPosition.y);
+        }
+
+        // 4. Inicia la cuenta regresiva de la barra
         float timer = duracion;
         while (timer > 0f)
         {
-            timer -= Time.unscaledDeltaTime; // unscaledDeltaTime avanza aunque TimeScale sea 0
+            timer -= Time.unscaledDeltaTime; 
             if (timeBar != null) timeBar.fillAmount = timer / duracion;
             yield return null;
         }
 
-        Time.timeScale = 1f; // Reanuda el juego
+        // 5. Desaparece de golpe y reanuda el juego
         notificationPanel.SetActive(false);
+        Time.timeScale = 1f; 
     }
 }

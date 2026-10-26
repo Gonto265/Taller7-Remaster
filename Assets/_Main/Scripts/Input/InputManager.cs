@@ -165,4 +165,54 @@ public class InputManager : MonoBehaviour
         
         // El SwipeAnimator se encarga de cambiar el video, por eso FeedManager.Next() no está aquí.
     }
+
+    // =========================================================
+    // INPUT EXTERNO (MEDIAPIPE)
+    // =========================================================
+    private bool isExternalSwiping;
+    private Vector2 externalStartPosition;
+
+    public void ReceiveHandTracking(Vector2 screenPos, bool isPinching)
+    {
+        if (!PuedeInteractuar())
+        {
+            if (isExternalSwiping)
+            {
+                isExternalSwiping = false;
+                OnDrag?.Invoke(0f);
+            }
+            return;
+        }
+
+        // Evitar que el cursor de la mano presione botones si solo está pasando por encima
+        // (Dejamos que solo el sistema de pellizco mueva el feed)
+
+        if (isPinching && !isExternalSwiping)
+        {
+            // Inicia el toque (Equivalente a TouchPhase.Began)
+            externalStartPosition = screenPos;
+            isExternalSwiping = true;
+
+            if (Time.time - lastTapTime < doubleTapThreshold)
+            {
+                EjecutarDobleToque();
+            }
+            lastTapTime = Time.time;
+        }
+        else if (isPinching && isExternalSwiping)
+        {
+            // Mantiene el toque (Equivalente a TouchPhase.Moved)
+            float deltaY = screenPos.y - externalStartPosition.y;
+            OnDrag?.Invoke(deltaY);
+        }
+        else if (!isPinching && isExternalSwiping)
+        {
+            // Suelta el toque (Equivalente a TouchPhase.Ended)
+            Vector2 endPosition = screenPos;
+            CheckSwipe(endPosition - externalStartPosition);
+            
+            isExternalSwiping = false;
+            OnDrag?.Invoke(0f);
+        }
+    }
 }
