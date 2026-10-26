@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22842443, y: 0}
   m_AnchorMax: {x: 1, y: 0.8248877}
-  m_AnchoredPosition: {x: -0.08001709, y: 0.58799744}
+  m_AnchoredPosition: {x: -0.08001709, y: 0.5879822}
   m_SizeDelta: {x: 0.47998047, y: 0.33999634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19252105
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.95
+  m_fontSize: 27.9
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.15
+  m_fontSize: 41.1
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2277,11 +2277,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285e286029f742246907cd2469204a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NotificationManager
-  notificationPanel: {fileID: 0}
-  characterIcon: {fileID: 0}
-  nameText: {fileID: 0}
-  messageText: {fileID: 0}
-  timeBar: {fileID: 0}
+  notificationPanel: {fileID: 1536517730}
+  characterIcon: {fileID: 1521197026}
+  nameText: {fileID: 1093951708}
+  messageText: {fileID: 19252105}
+  timeBar: {fileID: 990642056}
   tutoSprite: {fileID: 0}
   doomSprite: {fileID: 0}
   duracion: 4
@@ -3424,11 +3424,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -4518,7 +4518,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.4
+  m_fontSize: 40.35
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
