@@ -44,4 +44,13 @@ public class HandInputController : MonoBehaviour
         // 4. Enviar los datos al InputManager
         inputManager.ReceiveHandTracking(screenPos, isPinching);
     }
+
+    // Esta función es llamada mediante SendMessage desde MediaPipe
+    public void RecibirManoDesdeMediaPipe(Vector4 datosMano)
+    {
+        Vector2 indexTip = new Vector2(datosMano.x, datosMano.y);
+        Vector2 thumbTip = new Vector2(datosMano.z, datosMano.w);
+        
+        ProcesarMano(indexTip, thumbTip);
+    }
 }
