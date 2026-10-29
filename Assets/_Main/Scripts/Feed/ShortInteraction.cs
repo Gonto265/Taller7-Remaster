@@ -31,6 +31,7 @@ public class ShortInteraction : MonoBehaviour
     private Coroutine flashCoroutine;    
 
     [SerializeField] private GameObject reportConfirmation;
+    [SerializeField] private GameObject botonFondoCancelar; // NUEVO: Botón invisible para cancelar afuera
 
     [SerializeField] private UnityEngine.UI.Image likeIcon;
     [SerializeField] private Sprite likeVacio;
@@ -85,6 +86,7 @@ public class ShortInteraction : MonoBehaviour
         {
             reportConfirmation.SetActive(false);
         }
+        if (botonFondoCancelar != null) botonFondoCancelar.SetActive(false); // NUEVO
 
         Debug.Log(
             $"ShortInteraction inicializado → {shortData.name}, " +
@@ -212,6 +214,7 @@ public class ShortInteraction : MonoBehaviour
         {
             reportConfirmation.SetActive(true);
         }
+        if (botonFondoCancelar != null) botonFondoCancelar.SetActive(true); // NUEVO
     }
 
     public void CancelarReport()
@@ -223,6 +226,7 @@ public class ShortInteraction : MonoBehaviour
         {
             reportConfirmation.SetActive(false);
         }
+        if (botonFondoCancelar != null) botonFondoCancelar.SetActive(false); // NUEVO
 
         Debug.Log("Reporte cancelado.");
     }
@@ -245,6 +249,7 @@ public class ShortInteraction : MonoBehaviour
         {
             reportConfirmation.SetActive(false);
         }
+        if (botonFondoCancelar != null) botonFondoCancelar.SetActive(false); // NUEVO
     
         if (isTutorial)
         {
