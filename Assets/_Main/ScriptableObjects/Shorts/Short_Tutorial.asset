@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Short_Tutorial
   m_EditorClassIdentifier: 
   id: Tutorial
-  video: {fileID: 0}
+  video: {fileID: 32900000, guid: c90d74fe27266804598389a0d3f755b2, type: 3}
   titulo: Tutorial
   fuente: 
   sensacionalismo: 1
