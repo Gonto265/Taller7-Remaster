@@ -10,21 +10,26 @@ public class HandInputController : MonoBehaviour
 
     [Header("Configuración de Gestos")]
     [SerializeField] private float pinchThreshold = 0.05f; 
-    [SerializeField] private float openThreshold = 0.40f; // Distancia para considerar la mano abierta
 
     [Header("Estabilización del Cursor")]
     [SerializeField] private float suavizadoCursor = 15f; 
     private Vector2 posicionSuavizada;
 
-    [Header("Fijación Inteligente (Dwell Click en Botones)")]
-    [SerializeField] private float tiempoParaClic = 1.0f; // 1 segundo sobre el botón
+    [Header("Fijación Inteligente (Dwell Click)")]
+    [SerializeField] private float tiempoParaClic = 0.4f; 
     
     private float tiempoHover = 0f;
     private GameObject botonMiradoActualmente = null;
-    private bool clicRealizado = false; // Evita que haga 100 clics si dejas la mano ahí
+    private bool clicRealizado = false; 
+
+    [Header("Like (Doble Pellizco)")]
+    [SerializeField] private float tiempoMaxDoblePellizco = 0.5f; // Tiempo máximo para hacer el doble tap
+    [SerializeField] private float tiempoMinAntiParpadeo = 0.15f; // Filtro: Evita "falsos dobles clics" por temblor de cámara
+    
+    private float ultimoTiempoPellizco = -1f;
+    private bool wasIndexPinching = false;
 
     private InputManager inputManager;
-    private bool wasOpenHand = false;
 
     private void Awake()
     {
@@ -52,39 +57,47 @@ public class HandInputController : MonoBehaviour
         }
 
         // =================================================
-        // 2. LÓGICA DE FIJACIÓN INTELIGENTE (BOTONES)
+        // 2. LÓGICA DE FIJACIÓN (BOTONES UI)
         // =================================================
         DetectarBotonesUI(posicionSuavizada);
 
         // =================================================
-        // 3. DETECCIÓN MATEMÁTICA DE GESTOS
+        // 3. DETECCIÓN DE PELLIZCO (SCROLL Y LIKE)
         // =================================================
-        
         bool isIndexPinching = Vector2.Distance(index, thumb) < pinchThreshold;
         
-        // Distancia de las puntas a la muñeca para saber si está abierta
-        float distIndex = Vector2.Distance(index, wrist);
-        float distMiddle = Vector2.Distance(middle, wrist);
-        float distRing = Vector2.Distance(ring, wrist);
-        float distPinky = Vector2.Distance(pinky, wrist);
-
-        // MANO ABIERTA: Todos los dedos lejos de la muñeca
-        bool isOpenHand = distIndex > openThreshold && distMiddle > openThreshold && 
-                          distRing > openThreshold && distPinky > openThreshold;
-
-        // =================================================
-        // 4. EJECUCIÓN DE ACCIONES
-        // =================================================
-
-        // ACCIÓN: LIKE (Mano Extendida)
-        if (isOpenHand && !wasOpenHand)
+        // Lógica de Doble Pellizco con Filtro
+        if (isIndexPinching && !wasIndexPinching) // Justo en el frame que pellizca
         {
-            EjecutarLike();
-        }
-        wasOpenHand = isOpenHand;
+            float tiempoActual = Time.time;
+            float diferencia = tiempoActual - ultimoTiempoPellizco;
 
-        // ACCIÓN: SCROLL (Mantener Índice + Pulgar y arrastrar)
+            // Verificamos si está en el rango correcto (ni un error de cámara, ni demasiado lento)
+            if (diferencia > tiempoMinAntiParpadeo && diferencia <= tiempoMaxDoblePellizco)
+            {
+                EjecutarLike();
+                ultimoTiempoPellizco = 0f; // Reiniciamos para evitar un triple click
+            }
+            else if (diferencia > tiempoMaxDoblePellizco)
+            {
+                // Es el primer pellizco intencional de una posible secuencia
+                ultimoTiempoPellizco = tiempoActual;
+            }
+        }
+        wasIndexPinching = isIndexPinching;
+
+        // Enviamos al InputManager para el Scroll (mantener presionado)
         inputManager.ReceiveHandTracking(posicionSuavizada, isIndexPinching); 
+    }
+
+    private void EjecutarLike()
+    {
+        ShortInteraction shortActivo = Object.FindFirstObjectByType<ShortInteraction>();
+        if (shortActivo != null)
+        {
+            shortActivo.Like();
+            Debug.Log("❤️ ¡Like activado por Doble Pellizco!");
+        }
     }
 
     private void DetectarBotonesUI(Vector2 posicionPantalla)
@@ -97,12 +110,10 @@ public class HandInputController : MonoBehaviour
 
         GameObject objetoTocado = null;
 
-        // Buscamos si tocamos algo que sea interactuable (un botón)
         if (results.Count > 0)
         {
             foreach (RaycastResult result in results)
             {
-                // Verifica si el objeto tiene eventos de clic (como un Button)
                 GameObject posibleBoton = ExecuteEvents.GetEventHandler<IPointerClickHandler>(result.gameObject);
                 if (posibleBoton != null)
                 {
@@ -112,28 +123,23 @@ public class HandInputController : MonoBehaviour
             }
         }
 
-        // Si estamos sobre un botón válido
         if (objetoTocado != null)
         {
             if (objetoTocado == botonMiradoActualmente)
             {
-                // Si seguimos sobre el mismo botón y aún no hemos hecho clic
                 if (!clicRealizado)
                 {
                     tiempoHover += Time.deltaTime;
                     if (tiempoHover >= tiempoParaClic)
                     {
-                        // ¡Pasó 1 segundo! Hacemos clic
                         ExecuteEvents.Execute(botonMiradoActualmente, pointerData, ExecuteEvents.pointerClickHandler);
                         Debug.Log("🖱️ ¡Clic automático en: " + botonMiradoActualmente.name);
-                        
-                        clicRealizado = true; // Bloqueamos para no hacer más clics hasta que se quite de ahí
+                        clicRealizado = true; 
                     }
                 }
             }
             else
             {
-                // Entramos a un botón nuevo
                 botonMiradoActualmente = objetoTocado;
                 tiempoHover = 0f;
                 clicRealizado = false;
@@ -141,24 +147,12 @@ public class HandInputController : MonoBehaviour
         }
         else
         {
-            // No estamos sobre ningún botón, o salimos de uno
             botonMiradoActualmente = null;
             tiempoHover = 0f;
             clicRealizado = false;
         }
     }
 
-    private void EjecutarLike()
-    {
-        ShortInteraction shortActivo = Object.FindFirstObjectByType<ShortInteraction>();
-        if (shortActivo != null)
-        {
-            shortActivo.Like(); 
-            Debug.Log("🖐️ ¡Like alternado por Mano Extendida!");
-        }
-    }
-
-    // Recuerda que esta función la sigue llamando MediaPipe con el Array de 12 datos
     public void RecibirManoDesdeMediaPipe(float[] datos)
     {
         if (datos == null || datos.Length < 12) return;

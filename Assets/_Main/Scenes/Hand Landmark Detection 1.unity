@@ -332,6 +332,10 @@ MonoBehaviour:
   cursorUI: {fileID: 487413939}
   mainCanvas: {fileID: 8571076842648159879}
   pinchThreshold: 0.05
+  suavizadoCursor: 15
+  tiempoParaClic: 1
+  tiempoMaxDoblePellizco: 0.5
+  tiempoMinAntiParpadeo: 0.15
 --- !u!114 &487413941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +585,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 855272824552691390, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124084847070368132, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -590,6 +599,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572262660062614757, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.4660645
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572939547872243608, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572939547872243608, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.60601807
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809170782117920870, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 25.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471393442739068258, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.16000366
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717881752323630061, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 31.146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962066588292806529, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.78393555
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118486943120658935, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 37.6
       objectReference: {fileID: 0}
     - target: {fileID: 6205669795678723885, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
         type: 3}
@@ -646,6 +695,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8544882011708915751, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.0740967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844781369665492468, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207085285847780455, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13.918945
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -675,7 +739,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HandInputController
   cursorUI: {fileID: 199237363}
   mainCanvas: {fileID: 1329877816}
-  pinchThreshold: 0.05
+  pinchThreshold: 0.02
+  suavizadoCursor: 30
+  tiempoParaClic: 0.4
+  tiempoMaxDoblePellizco: 0.5
+  tiempoMinAntiParpadeo: 0.15
 --- !u!1 &1806680259
 GameObject:
   m_ObjectHideFlags: 0

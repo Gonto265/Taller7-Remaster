@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
 
     [Header("Configuración de Swipe y Toque")]
     [SerializeField] private float minimumSwipeDistance = 100f;
-    [SerializeField] private float doubleTapThreshold = 0.3f; // Tiempo máximo para considerar un doble toque
+    [SerializeField] private float doubleTapThreshold = 0.3f; 
 
     private Vector2 startPosition;
     private bool isSwiping;
@@ -27,7 +27,6 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        // 1. Verificamos si estamos en un estado donde se permite jugar
         if (!PuedeInteractuar())
         {
             if (isSwiping)
@@ -52,7 +51,7 @@ public class InputManager : MonoBehaviour
     }
 
     // =========================================================
-    // INPUT MOUSE / TOUCH
+    // INPUT MOUSE / TOUCH (Se mantiene intacto para PC/Celular)
     // =========================================================
 
     private void DetectMouseInput()
@@ -62,7 +61,6 @@ public class InputManager : MonoBehaviour
             startPosition = Input.mousePosition;
             isSwiping = true;
 
-            // Detección de doble toque
             if (Time.time - lastTapTime < doubleTapThreshold)
             {
                 EjecutarDobleToque();
@@ -97,7 +95,6 @@ public class InputManager : MonoBehaviour
             startPosition = touch.position;
             isSwiping = true;
 
-            // Detección de doble toque
             if (Time.time - lastTapTime < doubleTapThreshold)
             {
                 EjecutarDobleToque();
@@ -127,7 +124,7 @@ public class InputManager : MonoBehaviour
 
     private void EjecutarDobleToque()
     {
-        lastTapTime = 0f; // Reiniciamos para evitar que 3 toques cuenten como 2 dobles toques
+        lastTapTime = 0f; 
 
         if (shortInteraction == null)
         {
@@ -146,7 +143,6 @@ public class InputManager : MonoBehaviour
     private void CheckSwipe(Vector2 delta)
     {
         if (delta.y < minimumSwipeDistance) return;
-        
         if (Mathf.Abs(delta.y) <= Mathf.Abs(delta.x)) return; 
 
         SwipeUp?.Invoke();
@@ -162,8 +158,6 @@ public class InputManager : MonoBehaviour
         {
             gameManager.IniciarJuego();
         }
-        
-        // El SwipeAnimator se encarga de cambiar el video, por eso FeedManager.Next() no está aquí.
     }
 
     // =========================================================
@@ -184,30 +178,23 @@ public class InputManager : MonoBehaviour
             return;
         }
 
-        // Evitar que el cursor de la mano presione botones si solo está pasando por encima
-        // (Dejamos que solo el sistema de pellizco mueva el feed)
-
         if (isPinching && !isExternalSwiping)
         {
-            // Inicia el toque (Equivalente a TouchPhase.Began)
+            // Inicia el arrastre
             externalStartPosition = screenPos;
             isExternalSwiping = true;
-
-            if (Time.time - lastTapTime < doubleTapThreshold)
-            {
-                EjecutarDobleToque();
-            }
-            lastTapTime = Time.time;
+            
+            // Lógica de doble toque eliminada de aquí para evitar falsos positivos de la cámara
         }
         else if (isPinching && isExternalSwiping)
         {
-            // Mantiene el toque (Equivalente a TouchPhase.Moved)
+            // Mantiene el arrastre
             float deltaY = screenPos.y - externalStartPosition.y;
             OnDrag?.Invoke(deltaY);
         }
         else if (!isPinching && isExternalSwiping)
         {
-            // Suelta el toque (Equivalente a TouchPhase.Ended)
+            // Suelta el arrastre y verifica el swipe
             Vector2 endPosition = screenPos;
             CheckSwipe(endPosition - externalStartPosition);
             
