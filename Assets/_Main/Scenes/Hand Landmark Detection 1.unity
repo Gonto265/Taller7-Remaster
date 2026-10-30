@@ -717,7 +717,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1510993048658536413, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1716530433}
+      addedObject: {fileID: 1716530434}
   m_SourcePrefab: {fileID: 100100000, guid: 5814ca0d7e997bd4aa5d695eabdfbba7, type: 3}
 --- !u!1 &1716530431 stripped
 GameObject:
@@ -725,7 +725,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1376866619}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1716530433
+--- !u!114 &1716530434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -734,16 +734,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716530431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da2567cf0380abc4691d4b76016a32c6, type: 3}
+  m_Script: {fileID: 11500000, guid: c42a5d6189f3982428aec4a51de05698, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HandInputController
+  m_EditorClassIdentifier: Assembly-CSharp::HandInputControllerTV
   cursorUI: {fileID: 199237363}
   mainCanvas: {fileID: 1329877816}
-  pinchThreshold: 0.02
-  suavizadoCursor: 30
+  pinchThreshold: 0.05
+  prePinchThreshold: 0.12
+  suavizadoCursor: 25
   tiempoParaClic: 0.4
-  tiempoMaxDoblePellizco: 0.5
-  tiempoMinAntiParpadeo: 0.15
 --- !u!1 &1806680259
 GameObject:
   m_ObjectHideFlags: 0
