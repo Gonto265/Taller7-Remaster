@@ -638,7 +638,7 @@ PrefabInstance:
     - target: {fileID: 6118486943120658935, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
         type: 3}
       propertyPath: m_fontSize
-      value: 37.6
+      value: 37.65
       objectReference: {fileID: 0}
     - target: {fileID: 6205669795678723885, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
         type: 3}
@@ -695,6 +695,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7819089663848751319, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8544882011708915751, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -703,7 +708,7 @@ PrefabInstance:
     - target: {fileID: 8844781369665492468, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
         type: 3}
       propertyPath: m_fontSize
-      value: 36.9
+      value: 36.95
       objectReference: {fileID: 0}
     - target: {fileID: 9207085285847780455, guid: 5814ca0d7e997bd4aa5d695eabdfbba7,
         type: 3}
@@ -875,8 +880,8 @@ Camera:
   m_GameObject: {fileID: 1969388814}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1103,11 +1108,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8571076842338426121, guid: 140d1d2c406167c50819d89f86d9092e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8571076842338426122, guid: 140d1d2c406167c50819d89f86d9092e,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1969388816}
+    - target: {fileID: 8571076842338426123, guid: 140d1d2c406167c50819d89f86d9092e,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571076842338426123, guid: 140d1d2c406167c50819d89f86d9092e,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571076842338426123, guid: 140d1d2c406167c50819d89f86d9092e,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571076842338426123, guid: 140d1d2c406167c50819d89f86d9092e,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1920
+      objectReference: {fileID: 0}
     - target: {fileID: 8571076842338426133, guid: 140d1d2c406167c50819d89f86d9092e,
         type: 3}
       propertyPath: m_Pivot.x
