@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.EventSystems; // NUEVO: Requerido para interactuar con la UI
-using System.Collections.Generic; // NUEVO: Requerido para las listas de resultados
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class HandInputController : MonoBehaviour
 {
@@ -8,88 +8,168 @@ public class HandInputController : MonoBehaviour
     [SerializeField] private RectTransform cursorUI;
     [SerializeField] private Canvas mainCanvas;
 
-    [Header("Configuración de Pellizco")]
+    [Header("Configuración de Gestos")]
     [SerializeField] private float pinchThreshold = 0.05f; 
+    [SerializeField] private float openThreshold = 0.40f; // Distancia para considerar la mano abierta
+
+    [Header("Estabilización del Cursor")]
+    [SerializeField] private float suavizadoCursor = 15f; 
+    private Vector2 posicionSuavizada;
+
+    [Header("Fijación Inteligente (Dwell Click en Botones)")]
+    [SerializeField] private float tiempoParaClic = 1.0f; // 1 segundo sobre el botón
     
+    private float tiempoHover = 0f;
+    private GameObject botonMiradoActualmente = null;
+    private bool clicRealizado = false; // Evita que haga 100 clics si dejas la mano ahí
+
     private InputManager inputManager;
-    private bool wasPinching = false; // Control para saber si acaba de iniciar el pellizco
+    private bool wasOpenHand = false;
 
     private void Awake()
     {
         inputManager = Object.FindFirstObjectByType<InputManager>();
+        posicionSuavizada = new Vector2(Screen.width / 2f, Screen.height / 2f);
     }
 
-    public void ProcesarMano(Vector2 indexTip, Vector2 thumbTip)
+    public void ProcesarManoMultiple(Vector2 wrist, Vector2 thumb, Vector2 index, Vector2 middle, Vector2 ring, Vector2 pinky)
     {
         if (inputManager == null) return;
 
-        // 1. Convertir coordenadas
-        Vector2 screenPos = new Vector2(indexTip.x * Screen.width, (1f - indexTip.y) * Screen.height);
+        // 1. Suavizado y Movimiento del Cursor
+        Vector2 targetScreenPos = new Vector2(index.x * Screen.width, (1f - index.y) * Screen.height);
+        posicionSuavizada = Vector2.Lerp(posicionSuavizada, targetScreenPos, Time.deltaTime * suavizadoCursor);
 
-        // 2. Mover el cursor
         if (cursorUI != null && mainCanvas != null)
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 (RectTransform)mainCanvas.transform, 
-                screenPos, 
+                posicionSuavizada, 
                 mainCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : mainCanvas.worldCamera, 
                 out Vector2 localPos);
             
             cursorUI.anchoredPosition = localPos;
         }
 
-        // 3. Calcular pellizco
-        float distance = Vector2.Distance(indexTip, thumbTip);
-        bool isPinching = distance < pinchThreshold;
+        // =================================================
+        // 2. LÓGICA DE FIJACIÓN INTELIGENTE (BOTONES)
+        // =================================================
+        DetectarBotonesUI(posicionSuavizada);
 
         // =================================================
-        // NUEVO: SISTEMA DE CLIC EN BOTONES DE LA UI
+        // 3. DETECCIÓN MATEMÁTICA DE GESTOS
         // =================================================
-        if (isPinching && !wasPinching)
+        
+        bool isIndexPinching = Vector2.Distance(index, thumb) < pinchThreshold;
+        
+        // Distancia de las puntas a la muñeca para saber si está abierta
+        float distIndex = Vector2.Distance(index, wrist);
+        float distMiddle = Vector2.Distance(middle, wrist);
+        float distRing = Vector2.Distance(ring, wrist);
+        float distPinky = Vector2.Distance(pinky, wrist);
+
+        // MANO ABIERTA: Todos los dedos lejos de la muñeca
+        bool isOpenHand = distIndex > openThreshold && distMiddle > openThreshold && 
+                          distRing > openThreshold && distPinky > openThreshold;
+
+        // =================================================
+        // 4. EJECUCIÓN DE ACCIONES
+        // =================================================
+
+        // ACCIÓN: LIKE (Mano Extendida)
+        if (isOpenHand && !wasOpenHand)
         {
-            // Solo hacemos clic en el instante exacto en que se juntan los dedos
-            SimularClicUI(screenPos);
+            EjecutarLike();
         }
-        wasPinching = isPinching; // Guardamos el estado para no repetir el clic si mantiene cerrado
-        // =================================================
+        wasOpenHand = isOpenHand;
 
-        // 4. Enviar los datos al InputManager (para que se encargue del Swipe y los Likes)
-        inputManager.ReceiveHandTracking(screenPos, isPinching);
+        // ACCIÓN: SCROLL (Mantener Índice + Pulgar y arrastrar)
+        inputManager.ReceiveHandTracking(posicionSuavizada, isIndexPinching); 
     }
 
-    // Esta función dispara el rayo contra la UI
-    private void SimularClicUI(Vector2 posicionPantalla)
+    private void DetectarBotonesUI(Vector2 posicionPantalla)
     {
         if (EventSystem.current == null) return;
 
-        // Creamos un evento de puntero en la posición del cursor
-        PointerEventData pointerData = new PointerEventData(EventSystem.current)
-        {
-            position = posicionPantalla
-        };
-
-        // Disparamos el rayo y guardamos lo que toque en una lista
+        PointerEventData pointerData = new PointerEventData(EventSystem.current) { position = posicionPantalla };
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
 
+        GameObject objetoTocado = null;
+
+        // Buscamos si tocamos algo que sea interactuable (un botón)
         if (results.Count > 0)
         {
             foreach (RaycastResult result in results)
             {
-                // Disparamos la acción de "Clic" en el objeto tocado
-                ExecuteEvents.Execute(result.gameObject, pointerData, ExecuteEvents.pointerClickHandler);
-                
-                // Rompemos el ciclo para hacer clic solo en el elemento más al frente (evita pulsar botones ocultos atrás)
-                break;
+                // Verifica si el objeto tiene eventos de clic (como un Button)
+                GameObject posibleBoton = ExecuteEvents.GetEventHandler<IPointerClickHandler>(result.gameObject);
+                if (posibleBoton != null)
+                {
+                    objetoTocado = posibleBoton;
+                    break;
+                }
             }
+        }
+
+        // Si estamos sobre un botón válido
+        if (objetoTocado != null)
+        {
+            if (objetoTocado == botonMiradoActualmente)
+            {
+                // Si seguimos sobre el mismo botón y aún no hemos hecho clic
+                if (!clicRealizado)
+                {
+                    tiempoHover += Time.deltaTime;
+                    if (tiempoHover >= tiempoParaClic)
+                    {
+                        // ¡Pasó 1 segundo! Hacemos clic
+                        ExecuteEvents.Execute(botonMiradoActualmente, pointerData, ExecuteEvents.pointerClickHandler);
+                        Debug.Log("🖱️ ¡Clic automático en: " + botonMiradoActualmente.name);
+                        
+                        clicRealizado = true; // Bloqueamos para no hacer más clics hasta que se quite de ahí
+                    }
+                }
+            }
+            else
+            {
+                // Entramos a un botón nuevo
+                botonMiradoActualmente = objetoTocado;
+                tiempoHover = 0f;
+                clicRealizado = false;
+            }
+        }
+        else
+        {
+            // No estamos sobre ningún botón, o salimos de uno
+            botonMiradoActualmente = null;
+            tiempoHover = 0f;
+            clicRealizado = false;
         }
     }
 
-    public void RecibirManoDesdeMediaPipe(Vector4 datosMano)
+    private void EjecutarLike()
     {
-        Vector2 indexTip = new Vector2(datosMano.x, datosMano.y);
-        Vector2 thumbTip = new Vector2(datosMano.z, datosMano.w);
+        ShortInteraction shortActivo = Object.FindFirstObjectByType<ShortInteraction>();
+        if (shortActivo != null)
+        {
+            shortActivo.Like(); 
+            Debug.Log("🖐️ ¡Like alternado por Mano Extendida!");
+        }
+    }
+
+    // Recuerda que esta función la sigue llamando MediaPipe con el Array de 12 datos
+    public void RecibirManoDesdeMediaPipe(float[] datos)
+    {
+        if (datos == null || datos.Length < 12) return;
+
+        Vector2 wrist = new Vector2(datos[0], datos[1]);
+        Vector2 thumb = new Vector2(datos[2], datos[3]);
+        Vector2 index = new Vector2(datos[4], datos[5]);
+        Vector2 middle = new Vector2(datos[6], datos[7]);
+        Vector2 ring = new Vector2(datos[8], datos[9]);
+        Vector2 pinky = new Vector2(datos[10], datos[11]);
         
-        ProcesarMano(indexTip, thumbTip);
+        ProcesarManoMultiple(wrist, thumb, index, middle, ring, pinky);
     }
 }

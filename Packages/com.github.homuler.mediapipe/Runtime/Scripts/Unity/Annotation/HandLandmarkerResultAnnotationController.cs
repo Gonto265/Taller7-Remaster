@@ -39,30 +39,31 @@ namespace Mediapipe.Unity
             {
                 isStale = false;
 
-                // El código original de MediaPipe
                 annotation.SetHandedness(_currentTarget.handedness);
                 annotation.Draw(_currentTarget.handLandmarks, _visualizeZ);
 
                 // =======================================================
-                // NUEVO: Enviar datos de la mano a nuestro juego
+                // NUEVO: Enviar Muñeca y Puntas de todos los dedos
                 // =======================================================
                 if (_currentTarget.handLandmarks != null && _currentTarget.handLandmarks.Count > 0)
                 {
-                    var hand = _currentTarget.handLandmarks[0]; // Tomamos la primera mano detectada
+                    var hand = _currentTarget.handLandmarks[0];
 
-                    // Quitamos el "hand != null" porque NormalizedLandmarks es un struct
-                    if (hand.landmarks != null && hand.landmarks.Count > 8)
+                    if (hand.landmarks != null && hand.landmarks.Count > 20)
                     {
-                        // Extraemos X e Y de la punta del índice (Landmark 8) y pulgar (Landmark 4)
-                        Vector2 indexTip = new Vector2(hand.landmarks[8].x, hand.landmarks[8].y);
-                        Vector2 thumbTip = new Vector2(hand.landmarks[4].x, hand.landmarks[4].y);
+                        // Extraemos Muñeca(0) y Puntas: Pulgar(4), Índice(8), Medio(12), Anular(16), Meñique(20)
+                        float[] datosMano = new float[12];
 
-                        // Buscamos nuestro objeto Managers en la escena
+                        datosMano[0] = hand.landmarks[0].x; datosMano[1] = hand.landmarks[0].y;   // Muñeca
+                        datosMano[2] = hand.landmarks[4].x; datosMano[3] = hand.landmarks[4].y;   // Pulgar
+                        datosMano[4] = hand.landmarks[8].x; datosMano[5] = hand.landmarks[8].y;   // Índice
+                        datosMano[6] = hand.landmarks[12].x; datosMano[7] = hand.landmarks[12].y;  // Medio
+                        datosMano[8] = hand.landmarks[16].x; datosMano[9] = hand.landmarks[16].y;  // Anular
+                        datosMano[10] = hand.landmarks[20].x; datosMano[11] = hand.landmarks[20].y; // Meñique
+
                         GameObject managersObj = GameObject.Find("Managers");
                         if (managersObj != null)
                         {
-                            // Empaquetamos los 4 valores y enviamos el mensaje
-                            Vector4 datosMano = new Vector4(indexTip.x, indexTip.y, thumbTip.x, thumbTip.y);
                             managersObj.SendMessage("RecibirManoDesdeMediaPipe", datosMano, SendMessageOptions.DontRequireReceiver);
                         }
                     }
