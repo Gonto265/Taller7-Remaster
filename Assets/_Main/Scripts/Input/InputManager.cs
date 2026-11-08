@@ -37,8 +37,16 @@ public class InputManager : MonoBehaviour
             return;
         }
 
-        DetectMouseInput();
-        DetectTouchInput();
+        // EL FIX: Si el celular detecta dedos en la pantalla, solo procesa Touch.
+        // Si no hay dedos (o estamos en PC), procesa Mouse.
+        if (Input.touchCount > 0)
+        {
+            DetectTouchInput();
+        }
+        else
+        {
+            DetectMouseInput();
+        }
     }
 
     private bool PuedeInteractuar()
