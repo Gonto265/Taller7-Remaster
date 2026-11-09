@@ -4,6 +4,9 @@ public class InputManager : MonoBehaviour
 {
     public System.Action SwipeUp;
     public System.Action<float> OnDrag;
+    
+    // NUEVO: Evento exclusivo para cuando el jugador empieza a hacer SCROLL
+    public System.Action OnScrollDetectado; 
 
     [Header("Configuración de Swipe y Toque")]
     [SerializeField] private float minimumSwipeDistance = 100f;
@@ -37,8 +40,7 @@ public class InputManager : MonoBehaviour
             return;
         }
 
-        // EL FIX: Si el celular detecta dedos en la pantalla, solo procesa Touch.
-        // Si no hay dedos (o estamos en PC), procesa Mouse.
+        // Separación Touch / Mouse (Para evitar likes dobles en celular)
         if (Input.touchCount > 0)
         {
             DetectTouchInput();
@@ -58,10 +60,6 @@ public class InputManager : MonoBehaviour
                gameManager.CurrentState == GameManager.GameState.Playing;
     }
 
-    // =========================================================
-    // INPUT MOUSE / TOUCH (Se mantiene intacto para PC/Celular)
-    // =========================================================
-
     private void DetectMouseInput()
     {
         if (Input.GetMouseButtonDown(0))
@@ -79,6 +77,10 @@ public class InputManager : MonoBehaviour
         if (Input.GetMouseButton(0) && isSwiping)
         {
             float deltaY = Input.mousePosition.y - startPosition.y;
+            
+            // Si arrastra más de 30 píxeles, dispara la alarma de Scroll
+            if (Mathf.Abs(deltaY) > 30f) OnScrollDetectado?.Invoke();
+
             OnDrag?.Invoke(deltaY);
         }
 
@@ -113,6 +115,10 @@ public class InputManager : MonoBehaviour
         if (touch.phase == TouchPhase.Moved && isSwiping)
         {
             float deltaY = touch.position.y - startPosition.y;
+            
+            // Si desliza el dedo más de 30 píxeles, dispara la alarma de Scroll
+            if (Mathf.Abs(deltaY) > 30f) OnScrollDetectado?.Invoke();
+
             OnDrag?.Invoke(deltaY);
         }
 
@@ -125,10 +131,6 @@ public class InputManager : MonoBehaviour
             OnDrag?.Invoke(0f);
         }
     }
-
-    // =========================================================
-    // ACCIONES
-    // =========================================================
 
     private void EjecutarDobleToque()
     {
@@ -169,7 +171,7 @@ public class InputManager : MonoBehaviour
     }
 
     // =========================================================
-    // INPUT EXTERNO (MEDIAPIPE)
+    // INPUT EXTERNO (MEDIAPIPE / TV)
     // =========================================================
     private bool isExternalSwiping;
     private Vector2 externalStartPosition;
@@ -188,21 +190,20 @@ public class InputManager : MonoBehaviour
 
         if (isPinching && !isExternalSwiping)
         {
-            // Inicia el arrastre
             externalStartPosition = screenPos;
             isExternalSwiping = true;
-            
-            // Lógica de doble toque eliminada de aquí para evitar falsos positivos de la cámara
         }
         else if (isPinching && isExternalSwiping)
         {
-            // Mantiene el arrastre
             float deltaY = screenPos.y - externalStartPosition.y;
+            
+            // Si arrastra la pinza más de 30 píxeles, dispara la alarma de Scroll
+            if (Mathf.Abs(deltaY) > 30f) OnScrollDetectado?.Invoke();
+
             OnDrag?.Invoke(deltaY);
         }
         else if (!isPinching && isExternalSwiping)
         {
-            // Suelta el arrastre y verifica el swipe
             Vector2 endPosition = screenPos;
             CheckSwipe(endPosition - externalStartPosition);
             
