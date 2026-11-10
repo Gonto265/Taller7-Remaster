@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_031
   video: {fileID: 32900000, guid: 3fc3cb24466ca4b4589cc56c71d6e886, type: 3}
-  titulo: "\xA1ADI\xD3S A LAS TIENDAS DE BARRIO! Las grandes cadenas est\xE1n destruyendo
-    miles de peque\xF1os negocios en Colombia"
+  titulo: Ola de calor lleva a Antioquia a temperaturas extremas
   fuente: 
-  sensacionalismo: 3
-  falsedad: 3
-  tematica: Crisis tiendas de barrio
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: Ola de calor en Antioquia
   searchOptions:
-  - texto: "C\xE1mara de comercio econom\xEDa local Medell\xEDn"
-    tipo: 0
-  - texto: "\xBFC\xF3mo montar una tiendita de dulces?"
+  - texto: Recetas de helados de agua caseros
     tipo: 1
-  - texto: "Monopolios gigantes malvados destruyendo el pa\xEDs"
+  - texto: Personas sufriendo golpes de calor mortales
+    tipo: 0
+  - texto: "Pron\xF3stico del clima IDEAM para Antioquia"
     tipo: 2

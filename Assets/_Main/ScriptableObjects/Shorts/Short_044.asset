@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_031
   video: {fileID: 32900000, guid: 3fc3cb24466ca4b4589cc56c71d6e886, type: 3}
-  titulo: "\xA1ADI\xD3S A LAS TIENDAS DE BARRIO! Las grandes cadenas est\xE1n destruyendo
-    miles de peque\xF1os negocios en Colombia"
+  titulo: "\xA1CAOS EN LAS PALMAS! Grave accidente paraliza la v\xEDa entre Rionegro
+    y Medell\xEDn"
   fuente: 
-  sensacionalismo: 3
-  falsedad: 3
-  tematica: Crisis tiendas de barrio
+  sensacionalismo: 2
+  falsedad: 2
+  tematica: "Accidente V\xEDa Las Palmas"
   searchOptions:
-  - texto: "C\xE1mara de comercio econom\xEDa local Medell\xEDn"
+  - texto: "Gente enloqueciendo atrapada en el tr\xE1fico"
     tipo: 0
-  - texto: "\xBFC\xF3mo montar una tiendita de dulces?"
+  - texto: "Las mejores canciones para el tranc\xF3n"
     tipo: 1
-  - texto: "Monopolios gigantes malvados destruyendo el pa\xEDs"
+  - texto: "Movilidad Medell\xEDn Twitter reportes de accidentes"
     tipo: 2
