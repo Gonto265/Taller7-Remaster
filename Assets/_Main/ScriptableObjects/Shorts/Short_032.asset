@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_031
   video: {fileID: 32900000, guid: 5f92b74dbc4efa640befbb052cb47474, type: 3}
-  titulo: "Buscar empleo podr\xEDa costarte la vida"
+  titulo: "\xA1LOS TENDEROS EST\xC1N EN PELIGRO! Las tiendas de descuento est\xE1n
+    acabando con los negocios de barrio"
   fuente: 
-  sensacionalismo: 3
-  falsedad: 3
-  tematica: Falsas ofertas de empleo y secuestro
+  sensacionalismo: 2
+  falsedad: 2
+  tematica: Crisis tiendas de barrio
   searchOptions:
-  - texto: "\xBFQu\xE9 recomiendan las autoridades para verificar una oferta de empleo
-      sospechosa?"
+  - texto: Estrategias de apoyo a tenderos Colombia
     tipo: 2
-  - texto: "\xBFC\xF3mo funcionan las estafas con falsas ofertas laborales?"
+  - texto: "\xBFCu\xE1nto vale un Chocoramo este a\xF1o?"
     tipo: 1
-  - texto: "\xBFQu\xE9 ofertas falsas de empleo terminan en secuestro?"
+  - texto: Familias a la quiebra por supermercados
     tipo: 0

@@ -14,18 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_031
   video: {fileID: 32900000, guid: 23c44cd26dbdaf046996cdbf2b8d7214, type: 3}
-  titulo: "\xA1Adi\xF3s a los carros de gasolina! Medell\xEDn apuesta por los veh\xEDculos
-    el\xE9ctricos"
+  titulo: Tiendas de barrio entran en crisis por los altos costos
   fuente: 
-  sensacionalismo: 2
-  falsedad: 3
-  tematica: "Veh\xEDculos el\xE9ctricos"
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: Crisis tiendas de barrio
   searchOptions:
-  - texto: "\xBFMedell\xEDn realmente ha decidido prohibir los veh\xEDculos de gasolina?"
+  - texto: "Fenalco informe situaci\xF3n tiendas de barrio"
     tipo: 2
-  - texto: "\xBFQu\xE9 diferencias existen entre los veh\xEDculos el\xE9ctricos y
-      los de gasolina?"
+  - texto: Dulces colombianos ricos de los 90
     tipo: 1
-  - texto: "\xBFPor qu\xE9 los carros de gasolina van a desaparecer definitivamente
-      de Medell\xEDn?"
+  - texto: "Ruina total y pobreza negocios peque\xF1os"
     tipo: 0
