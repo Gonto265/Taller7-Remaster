@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_014
   video: {fileID: 32900000, guid: 93f021c5c628b904ca0122a1d87cf49e, type: 3}
-  titulo: "\xA1Caos y terror en Itag\xFC\xED! Incendio masivo deja decenas de v\xEDctimas"
+  titulo: "\xA1EMERGENCIA EN CL\xCDNICA! Gases t\xF3xicos obligan a evacuar a varias
+    personas."
   fuente: 
   sensacionalismo: 3
-  falsedad: 3
-  tematica: "Incendio en Itag\xFC\xED"
+  falsedad: 2
+  tematica: "Emergencia qu\xEDmica en cl\xEDnica"
   searchOptions:
-  - texto: "\xBFCu\xE1ntas v\xEDctimas dej\xF3 realmente el incendio reportado en
-      Itag\xFC\xED?"
+  - texto: "Bomberos medell\xEDn control emergencia gases"
     tipo: 2
-  - texto: "\xBFC\xF3mo se investigan los incendios que podr\xEDan ser provocados?"
+  - texto: "\xBFCu\xE1les son las series de doctores?"
     tipo: 1
-  - texto: "\xBFCu\xE1ntas personas murieron en el supuesto incendio masivo de Itag\xFC\xED?"
+  - texto: "Muertes terribles por intoxicaci\xF3n en cl\xEDnicas"
     tipo: 0

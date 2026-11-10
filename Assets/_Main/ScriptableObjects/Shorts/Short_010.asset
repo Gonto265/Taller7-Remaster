@@ -14,17 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_010
   video: {fileID: 32900000, guid: 197c4d599911ad741a5586548fdd36f3, type: 3}
-  titulo: "\xA1Aeropuerto en llamas! Una bola de fuego casi destruye los vuelos"
+  titulo: Globo de mecha cae en la pista del aeropuerto Olaya Herrera
   fuente: 
-  sensacionalismo: 3
-  falsedad: 3
+  sensacionalismo: 1
+  falsedad: 1
   tematica: Globo de mecha en el aeropuerto
   searchOptions:
-  - texto: "\xBFExisten pruebas de que hubo una explosi\xF3n en el aeropuerto Olaya
-      Herrera?"
+  - texto: Comunicado oficial aeropuerto olaya herrera globo
     tipo: 2
-  - texto: "\xBFQu\xE9 protocolos existen cuando ocurre una emergencia en un aeropuerto?"
+  - texto: "\xBFC\xF3mo hacer un globo de papel?"
     tipo: 1
-  - texto: "\xBFCu\xE1ntos vuelos estuvieron a punto de explotar por el incendio
-      del aeropuerto?"
+  - texto: Accidentes de aviones por globos videos
     tipo: 0

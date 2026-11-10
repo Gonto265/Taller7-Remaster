@@ -14,18 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_030
   video: {fileID: 32900000, guid: 62030e64860105d4187f99ac661a9b4f, type: 3}
-  titulo: "\xA1Boom el\xE9ctrico en Medell\xEDn! Conductores abandonan los carros
-    de gasolina"
+  titulo: "\xA1LA COMUNA 13 DESAPARECE! El turismo se apodera del barrio y borra
+    su identidad hist\xF3rica"
   fuente: 
-  sensacionalismo: 2
-  falsedad: 1
-  tematica: "Veh\xEDculos el\xE9ctricos"
+  sensacionalismo: 3
+  falsedad: 3
+  tematica: Turismo en la Comuna 13
   searchOptions:
-  - texto: "\xBFRealmente est\xE1 aumentando el n\xFAmero de conductores que cambian
-      de gasolina a veh\xEDculos el\xE9ctricos?"
+  - texto: Proyectos culturales habitantes de la comuna
     tipo: 2
-  - texto: "\xBFCu\xE1les son las ventajas y desventajas de cambiar un carro de gasolina
-      por uno el\xE9ctrico?"
+  - texto: "\xBFD\xF3nde venden las mejores paletas de mango?"
     tipo: 1
-  - texto: "\xBFCu\xE1ndo van a desaparecer los carros de gasolina de Medell\xEDn?"
+  - texto: "Destrucci\xF3n total de barrios tradicionales videos"
     tipo: 0

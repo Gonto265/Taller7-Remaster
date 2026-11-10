@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_006
   video: {fileID: 32900000, guid: 93e2a3f172702cf458c6b78a6d5f468d, type: 3}
-  titulo: "\xA1No hay trabajo! Medell\xEDn pierde empleos y miles quedan en la calle"
+  titulo: "NO HAY TRABAJO: Medell\xEDn est\xE1 perdiendo empleos mientras miles quedan
+    en la calle"
   fuente: 
   sensacionalismo: 3
   falsedad: 3
   tematica: "Desempleo en Medell\xEDn"
   searchOptions:
-  - texto: "\xBFLas cifras oficiales confirman una p\xE9rdida masiva de empleos en
-      Medell\xEDn?"
-    tipo: 2
-  - texto: "\xBFC\xF3mo ha variado el desempleo en Medell\xEDn recientemente?"
-    tipo: 1
-  - texto: "\xBFEs verdad que en Medell\xEDn ya no hay trabajo para nadie?"
+  - texto: "Familias viviendo en la calle medell\xEDn"
     tipo: 0
+  - texto: "\xBFC\xF3mo hacer plata jugando en roblox?"
+    tipo: 1
+  - texto: "Ofertas reales de empleo alcald\xEDa medell\xEDn"
+    tipo: 2

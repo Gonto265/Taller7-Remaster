@@ -14,17 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_020
   video: {fileID: 32900000, guid: d16edc7b23d3cd7449cc659cfccae64b, type: 3}
-  titulo: "\xA1El calor est\xE1 matando a Medell\xEDn! Podr\xEDamos quedarnos sin
-    plantas"
+  titulo: "\xA1PELIGRO PARA LOS CLIENTES! Restaurante es clausurado tras encontrar
+    comida contaminada"
   fuente: 
   sensacionalismo: 2
-  falsedad: 3
-  tematica: "Vegetaci\xF3n y sequ\xEDa bajo el Metro de Medell\xEDn"
+  falsedad: 2
+  tematica: "Cierre restaurante en Itag\xFC\xED"
   searchOptions:
-  - texto: "\xBFLos datos ambientales indican que Medell\xEDn est\xE1 sufriendo una
-      sequ\xEDa extrema?"
-    tipo: 2
-  - texto: "\xBFQu\xE9 factores pueden provocar sequ\xEDas en una ciudad?"
-    tipo: 1
-  - texto: "\xBFCu\xE1nto falta para que Medell\xEDn se quede completamente sin vegetaci\xF3n?"
+  - texto: "Par\xE1sitos gigantes en el est\xF3mago videos"
     tipo: 0
+  - texto: Retos de comer mucha comida picante
+    tipo: 1
+  - texto: "Inspecci\xF3n sanitaria restaurantes itag\xFC\xED resultados"
+    tipo: 2

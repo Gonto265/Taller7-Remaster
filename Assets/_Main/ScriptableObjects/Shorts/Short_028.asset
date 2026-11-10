@@ -14,17 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_028
   video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
-  titulo: "\xA1Adi\xF3s a las tiendas de barrio! Miles de negocios podr\xEDan desaparecer"
+  titulo: El turismo pone en riesgo a los habitantes de la Comuna 13
   fuente: 
-  sensacionalismo: 3
-  falsedad: 3
-  tematica: Tiendas de barrio
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: Turismo en la Comuna 13
   searchOptions:
-  - texto: "\xBFLas grandes cadenas realmente est\xE1n provocando el cierre de tiendas
-      de barrio?"
+  - texto: "Impacto econ\xF3mico turismo en comuna 13"
     tipo: 2
-  - texto: "\xBFC\xF3mo compiten las tiendas de barrio con las grandes cadenas comerciales?"
+  - texto: "\xBFCu\xE1nto cuesta ir al graffitour hoy?"
     tipo: 1
-  - texto: "\xBFC\xF3mo est\xE1n destruyendo las grandes cadenas los peque\xF1os
-      negocios de Colombia?"
+  - texto: "Peleas graves con turistas en medell\xEDn"
     tipo: 0

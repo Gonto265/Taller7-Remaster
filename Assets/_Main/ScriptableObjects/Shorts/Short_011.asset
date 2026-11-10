@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_011
   video: {fileID: 32900000, guid: baa97754d26fab44ba2300bf9aff272e, type: 3}
-  titulo: "Evac\xFAan un hospital de Medell\xEDn por una fuga de gas t\xF3xico"
+  titulo: "\xA1PELIGRO EN EL AEROPUERTO! Globo de fuego casi provoca una tragedia
+    a\xE9rea en Medell\xEDn"
   fuente: 
   sensacionalismo: 1
-  falsedad: 1
-  tematica: "Emergencia qu\xEDmica en cl\xEDnica"
+  falsedad: 2
+  tematica: Globo de mecha en el aeropuerto
   searchOptions:
-  - texto: "\xBFQu\xE9 gases t\xF3xicos pueden matar a personas dentro de una cl\xEDnica?"
-    tipo: 0
-  - texto: "\xBFQu\xE9 hacer ante una posible fuga de gas en un hospital?"
-    tipo: 1
-  - texto: "\xBFQu\xE9 sustancia provoc\xF3 la evacuaci\xF3n de la cl\xEDnica?"
+  - texto: "Aeron\xE1utica civil incidente olaya herrera hoy"
     tipo: 2
+  - texto: "Vuelos muy baratos a san andr\xE9s"
+    tipo: 1
+  - texto: "Aviones estrell\xE1ndose explosiones fuertes reales"
+    tipo: 0

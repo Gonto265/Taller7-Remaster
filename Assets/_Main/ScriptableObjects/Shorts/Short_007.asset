@@ -14,17 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_007
   video: {fileID: 32900000, guid: 7bff5047b27c1834bae5ee94e047ebf3, type: 3}
-  titulo: 'Cuidado al buscar trabajo: ofertas en redes terminan en secuestro'
+  titulo: Dos personas caen en una falsa oferta de empleo y son secuestradas
   fuente: 
-  sensacionalismo: 3
-  falsedad: 2
+  sensacionalismo: 2
+  falsedad: 1
   tematica: Falsas ofertas de empleo y secuestro
   searchOptions:
-  - texto: "\xBFHay reportes oficiales de secuestros relacionados con falsas ofertas
-      de empleo?"
-    tipo: 2
-  - texto: "\xBFQu\xE9 riesgos existen al buscar trabajo mediante redes sociales?"
+  - texto: "\xBFCu\xE1nto pagan por hacer tiktoks?"
     tipo: 1
-  - texto: "\xBFCu\xE1les son las redes sociales donde m\xE1s secuestran personas
-      con ofertas de empleo?"
+  - texto: "Noticias rescate secuestrados medell\xEDn polic\xEDa"
+    tipo: 2
+  - texto: "Secuestros reales medell\xEDn videos sin censura"
     tipo: 0

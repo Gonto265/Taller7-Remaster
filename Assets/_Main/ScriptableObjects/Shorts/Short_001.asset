@@ -14,18 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_001
   video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
-  titulo: "Colegios de Medell\xEDn enfrentan cierres ante la baja matr\xEDcula"
+  titulo: "Cierre masivo de instituciones en Medell\xEDn"
   fuente: 
   sensacionalismo: 1
   falsedad: 1
   tematica: "Cierre de colegios en Medell\xEDn"
   searchOptions:
-  - texto: "\xBFCu\xE1ntos colegios m\xE1s van a cerrar en Medell\xEDn por falta
-      de ni\xF1os?"
+  - texto: "Colegios abandonados embrujados medell\xEDn fotos"
     tipo: 0
-  - texto: "\xBFC\xF3mo ha cambiado la cantidad de estudiantes en los colegios de
-      Medell\xEDn?"
+  - texto: Memes de cuando no hay clases
     tipo: 1
-  - texto: "\xBFEs cierto que est\xE1n cerrando colegios en Medell\xEDn por falta
-      de estudiantes?"
+  - texto: "\xBFPor qu\xE9 cierran colegios en medell\xEDn?"
     tipo: 2

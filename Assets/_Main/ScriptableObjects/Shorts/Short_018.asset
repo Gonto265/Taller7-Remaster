@@ -14,17 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_018
   video: {fileID: 32900000, guid: 8e16661a4a9e2444a98d74e872eaf8fe, type: 3}
-  titulo: "\xA1Dengue fuera de control! Miles de personas podr\xEDan ser las siguientes"
+  titulo: "\xA1CAOS Y TERROR EN ITAG\xDC\xCD! Delincuentes provocan incendio y desatan
+    una tragedia con decenas de v\xEDctimas"
   fuente: 
   sensacionalismo: 3
   falsedad: 3
-  tematica: Brote de dengue en Colombia
+  tematica: "Incendio en Itag\xFC\xED"
   searchOptions:
-  - texto: "\xBFEs cierto que el brote de dengue est\xE1 causando miles de muertes
-      en Colombia?"
-    tipo: 2
-  - texto: "\xBFC\xF3mo prevenir las picaduras del mosquito que transmite el dengue?"
+  - texto: "\xBFPor qu\xE9 los bomberos tienen d\xE1lmatas?"
     tipo: 1
-  - texto: "\xBFC\xF3mo saber si una simple picadura de mosquito significa que voy
-      a morir de dengue?"
+  - texto: "Noticias itag\xFC\xED estado heridos incendio"
+    tipo: 2
+  - texto: "Desastres mortales fuego itag\xFC\xED terror real"
     tipo: 0

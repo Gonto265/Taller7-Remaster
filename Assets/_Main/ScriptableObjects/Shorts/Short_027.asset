@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_027
   video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
-  titulo: "\xA1Las tiendas de barrio est\xE1n cerrando! La crisis golpea a Colombia"
+  titulo: "\xA1LAS PLANTAS SE MUEREN! Medellin fabrica lluvia bajo el Metro porque
+    la sequ\xEDa est\xE1 acabando con la vegetaci\xF3n de la ciudad."
   fuente: 
   sensacionalismo: 2
-  falsedad: 2
-  tematica: Tiendas de barrio
+  falsedad: 3
+  tematica: Lluvia artificial bajo el Metro
   searchOptions:
-  - texto: "\xBFCu\xE1ntas tiendas de barrio han cerrado realmente en Colombia?"
+  - texto: "Proyecto corredores verdes alcald\xEDa de medell\xEDn"
     tipo: 2
-  - texto: "\xBFQu\xE9 factores est\xE1n afectando a las tiendas de barrio?"
-    tipo: 1
-  - texto: "\xBFCu\xE1ntas tiendas van a desaparecer por culpa de las grandes cadenas?"
+  - texto: "Medell\xEDn convertida en un desierto muerto"
     tipo: 0
+  - texto: "Plantas de pl\xE1stico bonitas para decorar"
+    tipo: 1

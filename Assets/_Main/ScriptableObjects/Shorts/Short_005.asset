@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_005
   video: {fileID: 32900000, guid: b11e338fedab9c443a9b1debb6812db7, type: 3}
-  titulo: "Medell\xEDn enfrenta una crisis laboral que sigue empeorando"
+  titulo: "CRISIS LABORAL: Medell\xEDn crea 6.000 empleos y el desempleo se dispara"
   fuente: 
   sensacionalismo: 2
   falsedad: 2
   tematica: "Desempleo en Medell\xEDn"
   searchOptions:
-  - texto: "\xBFDe d\xF3nde sale la cifra de 6.000 empleos perdidos en Medell\xEDn?"
+  - texto: "Informe de empleo medell\xEDn 2026"
     tipo: 2
-  - texto: "\xBFQu\xE9 sectores generan m\xE1s empleo actualmente en Medell\xEDn?"
+  - texto: Outfits aesthetic para exponer en clase
     tipo: 1
-  - texto: "\xBFCu\xE1ntos empleos va a perder Medell\xEDn por la crisis laboral?"
+  - texto: "Quiebra masiva de empresas medell\xEDn ruina"
     tipo: 0

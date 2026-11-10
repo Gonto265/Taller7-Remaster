@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_022
   video: {fileID: 32900000, guid: a1c6a56987ee54f4b895856e010f3923, type: 3}
-  titulo: "Las plantas de Medell\xEDn sufren por el calor y la sequ\xEDa"
+  titulo: Aumentan los casos de dengue en Antioquia
   fuente: 
-  sensacionalismo: 1
-  falsedad: 2
-  tematica: Lluvia artificial
+  sensacionalismo: 2
+  falsedad: 1
+  tematica: Brote de dengue en Antioquia
   searchOptions:
-  - texto: "\xBFHay evidencia de una sequ\xEDa que est\xE9 afectando las plantas
-      cerca del Metro de Medell\xEDn?"
-    tipo: 2
-  - texto: "\xBFQu\xE9 efectos tiene el calor sobre la vegetaci\xF3n urbana?"
+  - texto: "\xBFPor qu\xE9 los mosquitos pican tanto?"
     tipo: 1
-  - texto: "\xBFSe est\xE1n muriendo todas las plantas de Medell\xEDn por el calor?"
+  - texto: Ministerio de salud casos dengue 2026
+    tipo: 2
+  - texto: Personas muriendo desangradas por dengue severo
     tipo: 0

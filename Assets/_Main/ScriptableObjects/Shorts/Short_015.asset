@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_015
   video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
-  titulo: "Restaurante de Itag\xFC\xED es investigado por incumplir normas sanitarias"
+  titulo: "\xA1CL\xCDNICA CONTAMINADA! Una fuga de gases mortales pone en peligro
+    a cientos de personas en Medell\xEDn."
   fuente: 
-  sensacionalismo: 1
-  falsedad: 1
-  tematica: "Riesgo sanitario en restaurante de Itag\xFC\xED"
+  sensacionalismo: 3
+  falsedad: 3
+  tematica: "Emergencia qu\xEDmica en cl\xEDnica"
   searchOptions:
-  - texto: "\xBFQu\xE9 autoridad verific\xF3 las condiciones sanitarias del restaurante?"
-    tipo: 2
-  - texto: "\xBFQu\xE9 requisitos sanitarios debe cumplir un restaurante en Colombia?"
-    tipo: 1
-  - texto: "\xBFQu\xE9 enfermedades puede causar comer en un restaurante con mala
-      higiene?"
+  - texto: "Hospital radiactivo abandonado medell\xEDn mutaciones"
     tipo: 0
+  - texto: "\xBFC\xF3mo hacer un slime que brille?"
+    tipo: 1
+  - texto: "Alcald\xEDa medell\xEDn emergencia cl\xEDnica controlada"
+    tipo: 2

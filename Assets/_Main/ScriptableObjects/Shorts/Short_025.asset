@@ -14,17 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_025
   video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
-  titulo: "\xA1La Comuna 13 podr\xEDa perder su cultura por culpa del turismo!"
+  titulo: "Medell\xEDn crea lluvia artificial para salvar miles de plantas"
   fuente: 
-  sensacionalismo: 3
-  falsedad: 3
-  tematica: Turismo Comuna 13
+  sensacionalismo: 1
+  falsedad: 1
+  tematica: Lluvia artificial bajo el Metro
   searchOptions:
-  - texto: "\xBFQu\xE9 dicen los habitantes de la Comuna 13 sobre los efectos del
-      turismo?"
-    tipo: 2
-  - texto: "\xBFQu\xE9 elementos culturales de la Comuna 13 atraen a los turistas?"
-    tipo: 1
-  - texto: "\xBFLos turistas extranjeros est\xE1n apropi\xE1ndose de los recursos
-      de la Comuna 13?"
+  - texto: El mundo sin agua futuro devastado
     tipo: 0
+  - texto: "Sistema de riego metro de medell\xEDn"
+    tipo: 2
+  - texto: "\xBFC\xF3mo cuidar un cactus muy peque\xF1o?"
+    tipo: 1

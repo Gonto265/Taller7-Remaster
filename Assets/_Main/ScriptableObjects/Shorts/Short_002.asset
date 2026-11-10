@@ -14,17 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_002
   video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
-  titulo: "Colegios de Medell\xEDn quiebran por falta de ni\xF1os"
+  titulo: "\xA1CRISIS ESCOLAR! Colegios QUIEBRAN por falta de ni\xF1os"
   fuente: 
   sensacionalismo: 2
   falsedad: 2
   tematica: "Cierre de colegios en Medell\xEDn"
   searchOptions:
-  - texto: "\xBFQu\xE9 dicen las cifras oficiales sobre el cierre de colegios en
-      Medell\xEDn?"
-    tipo: 2
-  - texto: "\xBFCu\xE1les son las principales causas del cierre de colegios?"
-    tipo: 1
-  - texto: "\xBFQu\xE9 colegios de Medell\xEDn ya est\xE1n quebrando por falta de
-      estudiantes?"
+  - texto: "Ni\xF1os desapareciendo en medell\xEDn casos reales"
     tipo: 0
+  - texto: "Secretar\xEDa de educaci\xF3n medell\xEDn cierre colegios"
+    tipo: 2
+  - texto: "Uniformes escolares est\xE9ticos y baratos"
+    tipo: 1

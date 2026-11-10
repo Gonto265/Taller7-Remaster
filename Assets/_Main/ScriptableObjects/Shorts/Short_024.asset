@@ -14,17 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_024
   video: {fileID: 32900000, guid: 997ddf2386efcd2429c6dcd74be4cd00, type: 3}
-  titulo: "\xBFLa seguridad de la Comuna 13 est\xE1 en riesgo por el turismo?"
+  titulo: "\xA1EPIDEMIA FUERA DE CONTROL! Enfermedad mortal se apodera de Antioquia
+    y miles de personas est\xE1n en peligro"
   fuente: 
-  sensacionalismo: 2
-  falsedad: 1
-  tematica: Turismo Comuna 13
+  sensacionalismo: 3
+  falsedad: 3
+  tematica: Brote de dengue en Antioquia
   searchOptions:
-  - texto: "\xBFExisten datos que relacionen el aumento del turismo con problemas
-      de seguridad en la Comuna 13?"
+  - texto: "Alerta epidemiol\xF3gica oficial dengue colombia"
     tipo: 2
-  - texto: "\xBFQu\xE9 cambios ha producido el turismo en la seguridad de la Comuna
-      13?"
+  - texto: "\xBFC\xF3mo cazar un mosquito en la pieza?"
     tipo: 1
-  - texto: "\xBFQu\xE9 delitos est\xE1n cometiendo los turistas en la Comuna 13?"
+  - texto: Apocalipsis por virus mutante de mosquitos
     tipo: 0

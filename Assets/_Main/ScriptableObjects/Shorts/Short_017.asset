@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_017
   video: {fileID: 32900000, guid: fa8ffb38228bbf84c929e8187a0a233e, type: 3}
-  titulo: Aumentan los casos de dengue en Antioquia
+  titulo: "\xA1INCENDIO PROVOCADO! Ataque criminal deja seis heridos en Itag\xFC\xED"
   fuente: 
   sensacionalismo: 2
-  falsedad: 1
-  tematica: Brote de dengue en Antioquia
+  falsedad: 2
+  tematica: "Incendio en Itag\xFC\xED"
   searchOptions:
-  - texto: "\xBFQu\xE9 dicen las autoridades de salud sobre los casos de dengue en
-      Antioquia?"
-    tipo: 2
-  - texto: "\xBFCu\xE1les son los s\xEDntomas m\xE1s comunes del dengue?"
+  - texto: "\xBFQu\xE9 pasa si llamo por molestar?"
     tipo: 1
-  - texto: "\xBFCu\xE1ntas personas est\xE1n muriendo por el brote de dengue en Antioquia?"
+  - texto: "Polic\xEDa captura responsables incendio itag\xFC\xED hoy"
+    tipo: 2
+  - texto: "Piroman\xEDacos quemando casas intencionalmente videos"
     tipo: 0

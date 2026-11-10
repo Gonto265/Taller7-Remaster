@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_013
   video: {fileID: 32900000, guid: c2c6dea4230bb2943ac189e7c86dc842, type: 3}
-  titulo: "Incendio en Itag\xFC\xED deja seis heridos y dos capturados"
+  titulo: "Evacuan una cl\xEDnica de Medell\xEDn por gases t\xF3xicos."
   fuente: 
-  sensacionalismo: 2
+  sensacionalismo: 1
   falsedad: 1
-  tematica: "Incendio en Itag\xFC\xED"
+  tematica: "Emergencia qu\xEDmica en cl\xEDnica"
   searchOptions:
-  - texto: "\xBFCu\xE1ntas personas resultaron heridas realmente en el incendio de
-      Itag\xFC\xED?"
+  - texto: "DAGRD medell\xEDn reporte evacuaci\xF3n cl\xEDnica"
     tipo: 2
-  - texto: "\xBFC\xF3mo se determina la causa de un incendio residencial?"
+  - texto: "Videos de experimentos raros con qu\xEDmicos"
     tipo: 1
-  - texto: "\xBFQui\xE9n provoc\xF3 el incendio de Itag\xFC\xED?"
+  - texto: "Personas asfixiadas por gas t\xF3xico hospital"
     tipo: 0

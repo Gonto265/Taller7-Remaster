@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_016
   video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
-  titulo: "\xA1Comida contaminada! Restaurante de Itag\xFC\xED pone en peligro a
-    sus clientes"
+  titulo: "Incendio en Itag\xFC\xED deja seis heridos y dos capturados"
   fuente: 
   sensacionalismo: 2
-  falsedad: 2
-  tematica: "Riesgo sanitario en restaurante de Itag\xFC\xED"
+  falsedad: 1
+  tematica: "Incendio en Itag\xFC\xED"
   searchOptions:
-  - texto: "\xBFSe confirm\xF3 que el restaurante ten\xEDa alimentos contaminados?"
+  - texto: "Bomberos itag\xFC\xED reporte oficial incendio"
     tipo: 2
-  - texto: "\xBFC\xF3mo se detecta la contaminaci\xF3n de alimentos en un restaurante?"
+  - texto: "\xBFC\xF3mo apagar fuego con coca cola?"
     tipo: 1
-  - texto: "\xBFCu\xE1ntas personas terminaron intoxicadas por el restaurante contaminado?"
+  - texto: Gente atrapada en incendios reales fotos
     tipo: 0

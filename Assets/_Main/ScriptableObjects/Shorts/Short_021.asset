@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_021
   video: {fileID: 32900000, guid: 5151f2ebfc6a8d74fa1011ee811ed0d8, type: 3}
-  titulo: "\xA1Comida peligrosa! Clientes podr\xEDan terminar gravemente enfermos"
+  titulo: "\xA1RESTAURANTE VENENOSO! Plagas y alimentos podridos ponen en riesgo
+    la vida de miles de clientes en Itag\xFC\xED"
   fuente: 
   sensacionalismo: 3
   falsedad: 3
-  tematica: Restaurante
+  tematica: "Cierre restaurante en Itag\xFC\xED"
   searchOptions:
-  - texto: 
-    tipo: 2
-  - texto: 
-    tipo: 1
-  - texto: 
+  - texto: Ratas gigantes asquerosas cocinas reales restaurantes
     tipo: 0
+  - texto: "Receta f\xE1cil de pizza en sart\xE9n"
+    tipo: 1
+  - texto: "Comunicado alcald\xEDa cierre restaurante por salubridad"
+    tipo: 2

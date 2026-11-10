@@ -14,17 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: short_019
   video: {fileID: 32900000, guid: 2cdedec818e1f0c4dbcfbc430ee49689, type: 3}
-  titulo: "Medell\xEDn instala rociadores para proteger la vegetaci\xF3n del Metro"
+  titulo: "Restaurante en Itag\xFC\xED es cerrado por riesgo sanitario"
   fuente: 
   sensacionalismo: 1
   falsedad: 1
-  tematica: "Vegetaci\xF3n y sequ\xEDa bajo el Metro de Medell\xEDn"
+  tematica: "Cierre restaurante en Itag\xFC\xED"
   searchOptions:
-  - texto: "\xBFEl Metro de Medell\xEDn instal\xF3 realmente sistemas de riego para
-      las plantas?"
+  - texto: "Secretar\xEDa de salud itag\xFC\xED cierres locales"
     tipo: 2
-  - texto: "\xBFC\xF3mo se pueden proteger las plantas durante una sequ\xEDa urbana?"
+  - texto: "\xBFD\xF3nde comer la mejor hamburguesa gigante?"
     tipo: 1
-  - texto: "\xBFCu\xE1nto dinero est\xE1 gastando Medell\xEDn en regar las plantas
-      del Metro?"
+  - texto: Enfermedades asquerosas por comer en la calle
     tipo: 0
